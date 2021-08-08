@@ -36,8 +36,8 @@ namespace DiscountEngine.UnitTets
                 new Product('A'), new Product('B'), new Product('C')
             });
 
-            Cart cart = new Cart();
-            cart.AddOrders();
+            Cart cart = new Cart(_promotions);
+            cart.AddOrders(new CartOrder[] { order });
 
             // Act
             var orderBillDeatails = cart.GetOrderBillDetails();

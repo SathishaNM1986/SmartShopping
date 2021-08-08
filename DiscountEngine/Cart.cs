@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiscountEngine.Models;
+using System;
 using System.Collections.Generic;
 
 namespace DiscountEngine
@@ -6,14 +7,22 @@ namespace DiscountEngine
     public class Cart
     {
 
-        public void AddOrders()
+        private List<CartOrder> _orders = new List<CartOrder>();
+        private List<Promotion> _promotions = new List<Promotion>();
+        public Cart(List<Promotion> promotions)
         {
-            
+            _promotions = promotions;
+
+        }
+
+        public void AddOrders(CartOrder[] cartOrders)
+        {
+            this._orders.AddRange(cartOrders);
         }
 
         public double GetOrderBillDetails()
         {
-            CartOrder order = new CartOrder(1, new List<string> { "A", "B" });
+            Cart cart = new Cart(new List<Promotion>());
             return 100;
 
         }
