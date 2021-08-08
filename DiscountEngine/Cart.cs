@@ -40,21 +40,9 @@ namespace DiscountEngine
                          .GetDiscountPrice(order, promotion))
                          .ToList();
 
-                    // TODO : can be converted into design pattren
-                    decimal promoDiscountPrice = 0;
-                    bool promoEligible = false;
-                    if (promoDiscountPrices.Any())
-                    {
-                        promoEligible = true;
-                        if (maxPromotions == MaxPromotions.All)
-                        {
-                            promoDiscountPrice = promoDiscountPrices.Sum();
-                        }
-                        else if (maxPromotions == MaxPromotions.OneBest)
-                        {
-                            promoDiscountPrice = promoDiscountPrices.Max();
-                        }
-                    }
+                    decimal promoDiscountPrice;
+                    bool promoEligible;
+                    GetPromotionDiscount(maxPromotions, promoDiscountPrices, out promoDiscountPrice, out promoEligible);
 
                     var originalSumPrice = order.Products.Sum(x => x.Price);
                     var finalPrice = originalSumPrice - promoDiscountPrice;
@@ -69,6 +57,25 @@ namespace DiscountEngine
                 // use some logging mechanism like log4 net ...etc 
             }
             return orderBills;
+        }
+
+        private void GetPromotionDiscount(MaxPromotions maxPromotions, List<decimal> promoDiscountPrices, out decimal promoDiscountPrice, out bool promoEligible)
+        {
+            // TODO : can be converted into design pattren
+            promoDiscountPrice = 0;
+            promoEligible = false;
+            if (promoDiscountPrices.Any())
+            {
+                promoEligible = true;
+                if (maxPromotions == MaxPromotions.All)
+                {
+                    promoDiscountPrice = promoDiscountPrices.Sum();
+                }
+                else if (maxPromotions == MaxPromotions.OneBest)
+                {
+                    promoDiscountPrice = promoDiscountPrices.Max();
+                }
+            }
         }
     }
 }
