@@ -45,6 +45,66 @@ namespace DiscountEngine.UnitTets
             //Assert
             Assert.AreEqual(100, orderBillDeatails);
         }
+       
+        [TestMethod]
+        public void GetOrderBillDetailsFinalPriceSecenario2Test()
+        {
+            // Assign
+            List<CartOrder> orders = new List<CartOrder>();
+            CartOrder order = new CartOrder(1, new List<Product>() {
+                new Product('A'),new Product('A'),new Product('A'),new Product('A'),new Product('A'),
+                new Product('B'),new Product('B'),new Product('B'),new Product('B'),new Product('B'),
+                new Product('C')
+            });
+            Cart cart = new Cart(_promotions);
+            cart.AddOrders(new CartOrder[] { order });
+
+            // Act
+            var orderBillDeatails = cart.GetOrderBillDetails();
+
+            //Assert
+            Assert.AreEqual(370, orderBillDeatails);
+        }
+
+        [TestMethod]
+        public void GetOrderBillDetailsFinalPriceSecenario3Test()
+        {
+            // Assign
+            List<CartOrder> orders = new List<CartOrder>();
+            CartOrder order = new CartOrder(1, new List<Product>() {
+                new Product('A'),new Product('A'),new Product('A'),
+                new Product('B'),new Product('B'),new Product('B'),new Product('B'),new Product('B'),
+                new Product('C'),
+                new Product('D')
+            });
+            Cart cart = new Cart(_promotions);
+            cart.AddOrders(new CartOrder[] { order });
+
+            // Act
+            var orderBillDeatails = cart.GetOrderBillDetails();
+
+            //Assert
+            Assert.AreEqual(280, orderBillDeatails);
+        }
+
+        [TestMethod]
+        public void GetOrderBillDetailsFinalPriceSecenario4Test()
+        {
+            // Assign
+            List<CartOrder> orders = new List<CartOrder>();
+            CartOrder order = new CartOrder(1, new List<Product>() {
+                new Product('A'), new Product('A'),  //100
+                new Product('B'), new Product('B'), // 45
+                new Product('C'), new Product('D'), }); ; //30
+            Cart cart = new Cart(_promotions);
+            cart.AddOrders(new CartOrder[] { order });
+
+            // Act
+            var orderBillDeatails = cart.GetOrderBillDetails();
+
+            //Assert
+            Assert.AreEqual(175, orderBillDeatails);
+        }
     }
 }
 

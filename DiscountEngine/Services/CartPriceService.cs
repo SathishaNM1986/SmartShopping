@@ -16,6 +16,5 @@ namespace DiscountEngine.Services
         {
             return _promotionEngine.GetDiscountPrice(order, promotion);
         }
-
     }
 }
