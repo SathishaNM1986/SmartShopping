@@ -2,6 +2,7 @@ using DiscountEngine.Models;
 using DiscountEngine.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DiscountEngine.UnitTets
 {
@@ -9,14 +10,12 @@ namespace DiscountEngine.UnitTets
     public class CartTest
     {
         private List<Promotion> _promotions;
-
         [TestInitialize]
         public void Initialize()
         {
             // Need to be configurable on real scenario -DB,through UI,XML/json file, etc 
             ProductPriceServices.ProductPricesInfo = PromoEngineTestHelper.ProductPricesInfo;
             _promotions = PromoEngineTestHelper.Promotions;
-
         }
 
         [TestCleanup]
@@ -43,9 +42,9 @@ namespace DiscountEngine.UnitTets
             var orderBillDeatails = cart.GetOrderBillDetails();
 
             //Assert
-            Assert.AreEqual(100, orderBillDeatails);
+            Assert.AreEqual(100, orderBillDeatails.First().FinalPrice);
         }
-       
+
         [TestMethod]
         public void GetOrderBillDetailsFinalPriceSecenario2Test()
         {
@@ -63,7 +62,7 @@ namespace DiscountEngine.UnitTets
             var orderBillDeatails = cart.GetOrderBillDetails();
 
             //Assert
-            Assert.AreEqual(370, orderBillDeatails);
+            Assert.AreEqual(370, orderBillDeatails.First().FinalPrice);
         }
 
         [TestMethod]
@@ -84,7 +83,7 @@ namespace DiscountEngine.UnitTets
             var orderBillDeatails = cart.GetOrderBillDetails();
 
             //Assert
-            Assert.AreEqual(280, orderBillDeatails);
+            Assert.AreEqual(280, orderBillDeatails.First().FinalPrice);
         }
 
         [TestMethod]
@@ -103,8 +102,9 @@ namespace DiscountEngine.UnitTets
             var orderBillDeatails = cart.GetOrderBillDetails();
 
             //Assert
-            Assert.AreEqual(175, orderBillDeatails);
+            Assert.AreEqual(175, orderBillDeatails.First().FinalPrice);
         }
+
     }
 }
 
