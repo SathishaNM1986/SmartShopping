@@ -1,9 +1,6 @@
 ﻿using DiscountEngine.Enums;
 using DiscountEngine.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DiscountEngine.UnitTets.Services
 {
@@ -23,6 +20,19 @@ namespace DiscountEngine.UnitTets.Services
 
             //Assert
             Assert.IsInstanceOfType(promotionEngine, typeof(DefaultPromotion));
+        }
+
+        [TestMethod]
+        public void GetPromotionEngineForGroupingTest()
+        {
+            // Assign
+            _promotionFactory = new PromotionFactory(PromotionType.Grouping);
+
+            // Act
+            var promotionEngine = _promotionFactory.GetPromotionEngine();
+
+            //Assert
+            Assert.IsInstanceOfType(promotionEngine, typeof(GroupingPromotion));
         }
     }
 }

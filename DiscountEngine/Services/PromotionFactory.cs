@@ -1,8 +1,5 @@
 ﻿using DiscountEngine.Enums;
 using DiscountEngine.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DiscountEngine.Services
 {
@@ -16,9 +13,16 @@ namespace DiscountEngine.Services
         public IPromotionEngine GetPromotionEngine()
         {
             IPromotionEngine promotionEngine = null;
-            promotionEngine = new DefaultPromotion();
+            switch (_promotionType)
+            {
+                case PromotionType.Grouping:
+                    promotionEngine = new GroupingPromotion();
+                    break;
+                default:
+                    promotionEngine = new DefaultPromotion();
+                    break;
+            }
             return promotionEngine;
-
         }
     }
 }
