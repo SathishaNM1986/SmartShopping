@@ -20,12 +20,14 @@ namespace DiscountEngine.UnitTets
         public void GetOrderBillDetailsFinalPriceSecenario1Test()
         {
             // Assign
+            DiscountEngine discountEngine = new DiscountEngine();
 
             // Act
+            var expectedFinalPrice = discountEngine.GetFinalPrice();
 
             //Assert
             Assert.AreEqual(100, expectedFinalPrice);
         }
     }
-    }
 }
+

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartShopping", "SmartShopping\SmartShopping.csproj", "{1D97C25C-523B-4E05-836E-A44450B6D24B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartShopping", "SmartShopping\SmartShopping.csproj", "{1D97C25C-523B-4E05-836E-A44450B6D24B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountEngine.Specs", "DiscountEngine.Specs\DiscountEngine.Specs.csproj", "{F4BC2C06-C8DB-4D50-83B9-2508E6235A7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountEngine.Specs", "DiscountEngine.Specs\DiscountEngine.Specs.csproj", "{F4BC2C06-C8DB-4D50-83B9-2508E6235A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountEngine.UnitTets", "DiscountEngine.UnitTets\DiscountEngine.UnitTets.csproj", "{DD1B2C95-EF75-460A-B9B1-24AF2CB2F784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountEngine.UnitTets", "DiscountEngine.UnitTets\DiscountEngine.UnitTets.csproj", "{DD1B2C95-EF75-460A-B9B1-24AF2CB2F784}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9E52261F-D6A4-4A91-981D-9B44B675BF17}"
 EndProject
@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{99FF09
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{8736F3F9-F711-4A4B-BE4C-D0E71CA53E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountEngine.IntegrationTests", "DiscountEngine.IntegrationTests\DiscountEngine.IntegrationTests.csproj", "{FC63047E-0950-4205-9B66-84DEAC713733}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiscountEngine.IntegrationTests", "DiscountEngine.IntegrationTests\DiscountEngine.IntegrationTests.csproj", "{FC63047E-0950-4205-9B66-84DEAC713733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountEngine", "DiscountEngine\DiscountEngine.csproj", "{82888FBC-3CD1-40BF-81C8-58253122FAC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FC63047E-0950-4205-9B66-84DEAC713733}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC63047E-0950-4205-9B66-84DEAC713733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC63047E-0950-4205-9B66-84DEAC713733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82888FBC-3CD1-40BF-81C8-58253122FAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82888FBC-3CD1-40BF-81C8-58253122FAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82888FBC-3CD1-40BF-81C8-58253122FAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82888FBC-3CD1-40BF-81C8-58253122FAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{F4BC2C06-C8DB-4D50-83B9-2508E6235A7E} = {9E52261F-D6A4-4A91-981D-9B44B675BF17}
 		{DD1B2C95-EF75-460A-B9B1-24AF2CB2F784} = {9E52261F-D6A4-4A91-981D-9B44B675BF17}
 		{FC63047E-0950-4205-9B66-84DEAC713733} = {9E52261F-D6A4-4A91-981D-9B44B675BF17}
+		{82888FBC-3CD1-40BF-81C8-58253122FAC4} = {8736F3F9-F711-4A4B-BE4C-D0E71CA53E58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7EA039C-79F6-4300-95B6-09538601AC3D}
