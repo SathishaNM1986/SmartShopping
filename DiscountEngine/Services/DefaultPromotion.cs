@@ -1,8 +1,5 @@
 ﻿using DiscountEngine.Interfaces;
 using DiscountEngine.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DiscountEngine.Services
 {

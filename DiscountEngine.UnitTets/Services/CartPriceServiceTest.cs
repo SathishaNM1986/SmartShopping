@@ -5,7 +5,6 @@ using DiscountEngine.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DiscountEngine.UnitTets.Services
 {

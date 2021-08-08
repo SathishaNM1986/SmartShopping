@@ -1,6 +1,6 @@
 ﻿using DiscountEngine.Models;
-using System;
 using System.Collections.Generic;
+
 namespace DiscountEngine
 {
     public class CartOrder

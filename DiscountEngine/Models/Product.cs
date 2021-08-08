@@ -7,7 +7,6 @@ namespace DiscountEngine.Models
     {
         public char SkuId { get; set; }
         public decimal Price { get; set; }
-
         public Product()
         {
         }
@@ -17,6 +16,5 @@ namespace DiscountEngine.Models
             SkuId = skuId;
             Price = ProductPriceServices.ProductPricesInfo.FirstOrDefault(x => x.SkuId == SkuId).Price;
         }
-
     }
 }
